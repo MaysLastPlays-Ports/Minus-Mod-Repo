@@ -156,11 +156,11 @@ class CharMenuStory extends MusicBeatState
 
 		if (!alreadySelectedShit)
 		{
-			if (#if !mobile upP #else virtualPad.buttonUp.justPressed #end)
+			if (#if !mobile upP #else virtualPad.buttonLeft.justPressed #end)
 				{
 					changeSelection(-1);
 				}
-				if (#if !mobile downP #else virtualPad.buttonDown.justPressed #end)
+				if (#if !mobile downP #else virtualPad.buttonRight.justPressed #end)
 				{
 					changeSelection(1);
 				}
