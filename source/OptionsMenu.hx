@@ -47,6 +47,10 @@ class OptionsMenu extends MusicBeatState
 			// DONT PUT X IN THE FIRST PARAMETER OF new ALPHABET() !!
 		}
 
+   #if mobile
+   addVirtualPad(LEFT_FULL, A_B);
+   #end
+
 		super.create();
 	}
 
