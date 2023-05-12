@@ -20,6 +20,11 @@ class PauseSubState extends MusicBeatSubstate
 
 	public function new(x:Float, y:Float)
 	{
+
+   #if mobile
+   addVirtualPad(UP_DOWN, A_B);
+   #end
+
 		super();
 
 		pauseMusic = new FlxSound().loadEmbedded('assets/music/breakfast' + TitleState.soundExt, true, true);
