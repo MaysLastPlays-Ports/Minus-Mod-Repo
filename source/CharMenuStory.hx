@@ -134,7 +134,7 @@ class CharMenuStory extends MusicBeatState
 		cameras = [FlxG.cameras.list[FlxG.cameras.list.length - 1]];
 
    #if mobile
-   addVirtualPad(LEFT_RIGHT, A_B);
+   addVirtualPad(UP_DOWN, A_B);
    #end
 
 		super.create();
@@ -156,11 +156,11 @@ class CharMenuStory extends MusicBeatState
 
 		if (!alreadySelectedShit)
 		{
-			if (upP)
+			if (#if !mobile upP #else virtualPad.buttonUp.justPressed #end)
 				{
 					changeSelection(-1);
 				}
-				if (downP)
+				if (#if !mobile downP #else virtualPad.buttonDown.justPressed #end)
 				{
 					changeSelection(1);
 				}
