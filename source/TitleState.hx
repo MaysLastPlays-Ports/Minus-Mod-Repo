@@ -250,13 +250,13 @@ class TitleState extends MusicBeatState
 
 		if (pressedEnter && !transitioning && skippedIntro)
 		{
-			#if !switch
+			/*#if !switch
 			NGio.unlockMedal(60960);
 
 			// If it's Friday according to da clock
 			if (Date.now().getDay() == 5)
 				NGio.unlockMedal(61034);
-			#end
+			#end*/
 
 			titleText.animation.play('press');
 
@@ -272,7 +272,7 @@ class TitleState extends MusicBeatState
 
 				var version:String = "v" + Application.current.meta.get('version');
 
-				if (version.trim() != NGio.GAME_VER.trim() && !OutdatedSubState.leftState)
+				if (/*version.trim() != NGio.GAME_VER.trim() &&*/ !OutdatedSubState.leftState)
 				{
 					trace('OLD VERSION!');
 					FlxG.switchState(new MainMenuState());
