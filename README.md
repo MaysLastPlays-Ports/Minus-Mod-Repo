@@ -8,3 +8,5 @@ FNF Minus Source code for da homies (this isn't the newest version so expect it 
 - [Smokey](https://twitter.com/Smokey36011945)  - Coding
 - [ClemO](https://twitter.com/ClemO___O) - Musician
 - [hayasgpt](https://github.com/haya3218) - Coding
+- [MaysLastPlay](https://github.com/MaysLastPlay10) - Android Port
+- [Jigsaw](https://github.com/MAJigsaw77) - Workflow
