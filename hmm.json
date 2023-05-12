@@ -38,7 +38,7 @@
 		},
 		{
 		"name":"extension-androidtools",
-		"type":"git"
+		"type":"git",
 		"ref":"main",
 		"url":"https://github.com/MaysLastPlay77/extension-androidtools.git"
 		}
