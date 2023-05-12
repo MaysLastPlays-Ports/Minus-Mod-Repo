@@ -18,17 +18,17 @@ class GameOverSubstate extends MusicBeatSubstate
 	public function new(x:Float, y:Float)
 	{
 		var daChar = PlayState.SONG.player1;
-var daBf:String = '';
+    var daBf:String = '';
 
 
 	//Making them play the right death animations
 		daBf = PlayState.bfMode;
 	 if (PlayState.bfMode == 'bf-pixel')
 		daBf = 'bf-pixel-dead';
-	
-		
 
-
+   #if mobile
+   addVirtualPad(NONE, A_B);
+   #end
 
 		super();
 
