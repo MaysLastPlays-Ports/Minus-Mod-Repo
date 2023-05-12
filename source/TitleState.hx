@@ -42,6 +42,10 @@ class TitleState extends MusicBeatState
 
 	override public function create():Void
 	{
+		#if mobile
+		FlxG.android.preventDefaultKeys = [BACK];
+		#end
+
 		Polymod.init({modRoot: "mods", dirs: ['introMod']});
 
 		#if (!web)
@@ -134,10 +138,6 @@ class TitleState extends MusicBeatState
 
 		var bg:FlxSprite = new FlxSprite().makeGraphic(FlxG.width, FlxG.height, FlxColor.BLACK);
 		add(bg);
-		
-	
-	
-
 
 		logoBl = new FlxSprite(-150, -100);
 		logoBl.frames = FlxAtlasFrames.fromSparrow('assets/images/logoBumpin.png', 'assets/images/logoBumpin.xml');
@@ -146,7 +146,6 @@ class TitleState extends MusicBeatState
 		logoBl.animation.play('bump');
 		logoBl.updateHitbox();
 	
-
 		gfDance = new FlxSprite(FlxG.width * 0.4, FlxG.height * 0.07);
 		gfDance.frames = FlxAtlasFrames.fromSparrow('assets/images/gfDanceTitle.png', 'assets/images/gfDanceTitle.xml');
 		gfDance.animation.addByIndices('danceLeft', 'gfDance', [30, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14], "", 24, false);
@@ -168,9 +167,6 @@ class TitleState extends MusicBeatState
 		var logo:FlxSprite = new FlxSprite().loadGraphic('assets/images/logo.png');
 		logo.screenCenter();
 		logo.antialiasing = true;
-	
-
-		
 
 		credGroup = new FlxGroup();
 		add(credGroup);
@@ -181,8 +177,6 @@ class TitleState extends MusicBeatState
 
 		credTextShit = new Alphabet(0, 0, "ninjamuffin99\nPhantomArcade\nkawaisprite\nevilsk8er", true);
 		credTextShit.screenCenter();
-
-	
 
 		credTextShit.visible = false;
 
@@ -247,6 +241,16 @@ class TitleState extends MusicBeatState
 				pressedEnter = true;
 			#end
 		}
+
+		#if mobile
+		for (touch in FlxG.touches.list)
+		{
+			if (touch.justPressed)
+			{
+				pressedEnter = true;
+			}
+		}
+		#end
 
 		if (pressedEnter && !transitioning && skippedIntro)
 		{
