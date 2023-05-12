@@ -65,11 +65,11 @@ class PauseSubState extends MusicBeatSubstate
 		var downP = controls.DOWN_P;
 		var accepted = controls.ACCEPT;
 
-		if (upP)
+		if (#if !mobile upP #else virtualPad.buttonUp.justPressed #end)
 		{
 			changeSelection(-1);
 		}
-		if (downP)
+		if (#if !mobile downP #else virtualPad.buttonDown.justPressed #end)
 		{
 			changeSelection(1);
 		}
