@@ -15,4 +15,5 @@ class Main extends Sprite
 
 		addChild(new FPS(10, 3, 0xFFFFFF));
 	}
+		Generic.mode = ROOTDATA;
 }
