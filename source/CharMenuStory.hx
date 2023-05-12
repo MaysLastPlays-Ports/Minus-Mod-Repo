@@ -134,7 +134,7 @@ class CharMenuStory extends MusicBeatState
 		cameras = [FlxG.cameras.list[FlxG.cameras.list.length - 1]];
 
    #if mobile
-   addVirtualPad(UP_DOWN, A_B);
+   addVirtualPad(LEFT_RIGHT, A_B);
    #end
 
 		super.create();
