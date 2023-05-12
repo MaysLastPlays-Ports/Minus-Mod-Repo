@@ -210,7 +210,7 @@ class PermsState extends FlxState {
 			if (callback != null) {
 				callback();
 			}
-        	FlxG.switchState(Type.createInstance(Main.initialState, []));
+        	FlxG.switchState(Type.createInstance(TitleState[]);
         });
         continuebutton.screenCenter(XY);
         continuebutton.x += 300;
