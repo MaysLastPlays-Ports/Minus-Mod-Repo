@@ -11,11 +11,6 @@ import flixel.effects.FlxFlicker;
 import flixel.util.FlxTimer;
 import flixel.graphics.frames.FlxAtlasFrames;
 
-
-
-
-
-
 class CharMenu extends MusicBeatState
 {
 	var menuItems:Array<String> = ['BOYFRIEND', 'BOYFRIENDSECOND', 'BOYFRIENDTHIRD'];
@@ -126,6 +121,8 @@ class CharMenu extends MusicBeatState
 
 		cameras = [FlxG.cameras.list[FlxG.cameras.list.length - 1]];
 
+                #if mobile addVirtualPad(UP_DOWN, A_B); #end
+
 		super.create();
 	}
 
@@ -144,11 +141,11 @@ class CharMenu extends MusicBeatState
 
 		if (!alreadySelectedShit)
 		{
-			if (upP)
+			if (#if !mobile upP #else virtualPad.buttonUp.justPressed #end)
 				{
 					changeSelection(-1);
 				}
-				if (downP)
+				if (#if !mobile downP #else virtualPad.buttonDown.justPressed #end)
 				{
 					changeSelection(1);
 				}
