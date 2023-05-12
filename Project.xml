@@ -78,13 +78,7 @@
 	<haxelib name="faxe" if='switch'/>
 	<haxelib name="polymod"/>
 	<haxelib name="discord_rpc" if="desktop"/>
-	<haxelib name="extension-androidtools" if="android"/>
-	<!-- ______________________________ Android Configs _____________________________ -->
 
-	<config:android permission="android.permission.READ_EXTERNAL_STORAGE" if="android"/>
-	<config:android permission="android.permission.WRITE_EXTERNAL_STORAGE" if="android"/>
-        <config:android gradle-version="7.5.1" />
-        <config:android gradle-plugin="7.3.1" />
 	<!-- ______________________________ Haxedefines _____________________________ -->
 
 	<!--Enable the Flixel core recording system-->
