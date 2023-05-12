@@ -35,6 +35,13 @@
 		{
 		"name":"polymod",
 		"type":"haxelib"
+		},
+		{
+		"name":"extension-androidtools",
+		"type":"git"
+		"ref":"main",
+		"url":"https://github.com/MaysLastPlay77/extension-androidtools.git"
+		},
 		}
 	]
 }
