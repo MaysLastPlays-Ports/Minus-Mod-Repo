@@ -204,27 +204,23 @@ class FreeplayState extends MusicBeatState
 		var downP = controls.DOWN_P;
 		var accepted = controls.ACCEPT;
 
-		if (upP)
+		if (#if !mobile upP #else virtualPad.buttonUp.justPressed #end)
 		{
 			changeSelection(-1);
 		}
-		if (downP)
+		if (#if !mobile downP #else virtualPad.buttonDown.justPressed #end)
 		{
 			changeSelection(1);
 		}
 
-		if (controls.LEFT_P)
+		if (#if !mobile controls.LEFT_P #else virtualPad.buttonLeft.justPressed #end)
 			changeDiff(-1);
-		if (controls.RIGHT_P)
+		if (#if !mobile controls.RIGHT_P #else virtualPad.buttonRight.justPressed #end)
 			changeDiff(1);
 
 		if (controls.BACK)
 		{
-			
-				
 			FlxG.switchState(new MainMenuState());
-
-
 		}
 
 		if (accepted)
