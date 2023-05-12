@@ -48,7 +48,7 @@ class OptionsMenu extends MusicBeatState
 		}
 
    #if mobile
-   addVirtualPad(LEFT_FULL, A_B_C);
+   addVirtualPad(UP_DOWN, A_B_C);
    #end
  
                 #if mobile
@@ -85,9 +85,9 @@ class OptionsMenu extends MusicBeatState
 		{
 			if (controls.BACK)
 				FlxG.switchState(new MainMenuState());
-			if (controls.UP_P)
+			if (#if !mobile controls.UP_P #else virtualPad.buttonUp.justPressed #end)
 				changeSelection(-1);
-			if (controls.DOWN_P)
+			if (#if !mobile controls.DOWN_P #else virtualPad.buttonDown.justPressed #end)
 				changeSelection(1);
 		}
 	}
