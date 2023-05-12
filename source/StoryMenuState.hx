@@ -276,12 +276,12 @@ class StoryMenuState extends MusicBeatState
 		{
 			if (!selectedWeek)
 			{
-				if (controls.UP_P)
+				if (#if !mobile controls.UP_P #else virtualPad.buttonUp.justPressed #end)
 				{
 					changeWeek(-1);
 				}
 
-				if (controls.DOWN_P)
+				if (#if !mobile controls.DOWN_P #else virtualPad.buttonDown.justPressed #end)
 				{
 					changeWeek(1);
 				}
@@ -296,9 +296,9 @@ class StoryMenuState extends MusicBeatState
 				else
 					leftArrow.animation.play('idle');
 
-				if (controls.RIGHT_P)
+				if (#if !mobile controls.RIGHT_P #else virtualPad.buttonLeft.justPressed #end)
 					changeDifficulty(1);
-				if (controls.LEFT_P)
+				if (#if !mobile controls.LEFT_P #else virtualPad.buttonRight.justPressed #end)
 					changeDifficulty(-1);
 			}
 
